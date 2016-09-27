@@ -19,3 +19,12 @@ nbproject/*
 *.swp
 *.DS_Store
 *.lock
+20160927_Inicialito/build.xml
+20160927_Inicialito/nbproject/ant-deploy.xml
+20160927_Inicialito/web/META-INF/context.xml
+20160927_Inicialito/src/conf/MANIFEST.MF
+20160927_Inicialito/nbproject/build-impl.xml
+20160927_Inicialito/nbproject/genfiles.properties
+20160927_Inicialito/nbproject/private/private.properties
+20160927_Inicialito/nbproject/project.properties
+20160927_Inicialito/nbproject/project.xml
