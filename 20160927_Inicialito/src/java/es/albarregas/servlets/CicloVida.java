@@ -7,6 +7,8 @@ package es.albarregas.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
+import java.util.Enumeration;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CicloVida", urlPatterns = {"/ciclo"})
 public class CicloVida extends HttpServlet {
+    public Enumeration<String> servletParams ;
 
     /**
      *
@@ -27,7 +30,8 @@ public class CicloVida extends HttpServlet {
      */
     @Override
     public void init(ServletConfig config){
-        System.out.println("init()");
+        servletParams=config.getInitParameterNames();
+
             }
 
     /**
@@ -49,6 +53,15 @@ public class CicloVida extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("service()");
-    }
+         while(servletParams.hasMoreElements()){
+           System.out.println(servletParams.nextElement());
+           System.out.println(request.getParameter(servletParams.nextElement()));
+
+         }
+            
+        }
+      
+    
+    
 
 }
