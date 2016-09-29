@@ -8,6 +8,7 @@ package es.albarregas.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Daw2
  */
-public class Saludo extends HttpServlet {
+@WebServlet(name = "SaludoAnotacion", urlPatterns = {"/SaludoAnotacion"})
+public class SaludoAnotacion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +37,10 @@ public class Saludo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Saludo</title>");            
+            out.println("<title>Servlet SaludoAnotacion</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Saludo at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SaludoAnotacion at " + request.getContextPath() + "</h1>");
             out.println("<a href=" + request.getContextPath() +" >Inicio</a>");
             out.println("</body>");
             out.println("</html>");
