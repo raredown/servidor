@@ -52,12 +52,30 @@ public class CicloVida extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("service()");
-         while(servletParams.hasMoreElements()){
-           System.out.println(servletParams.nextElement());
-           System.out.println(request.getParameter(servletParams.nextElement()));
-
-         }
+        PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Par&aacute;metros</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Par&aacute;metros iniciales</h1>");
+            java.util.Enumeration<String> parametros = request.getParameterNames();
+            
+            while(parametros.hasMoreElements()){
+                String elemento = parametros.nextElement();
+                String valor = request.getParameter(elemento);
+                out.println("<p>" + elemento + " - " + valor + "</p>");
+            }
+            java.util.Enumeration<String> parametrostritos = request.getHeaderNames();
+            
+            while(parametrostritos.hasMoreElements()){
+                String elemento = parametrostritos.nextElement();
+                String valor = request.getHeader(elemento);
+                out.println("<p>" + elemento + " - " + valor + "</p>");
+            }
+            out.println("</body>");
+            out.println("</html>");
             
         }
       
