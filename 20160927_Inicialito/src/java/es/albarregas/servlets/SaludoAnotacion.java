@@ -37,10 +37,11 @@ public class SaludoAnotacion extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" href=\"cosascss/estilos.css\" media=\"screen\" title=\"no title\">\n");
             out.println("<title>Servlet SaludoAnotacion</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SaludoAnotacion at " + request.getContextPath() + "</h1>");
+            out.println("<h1 id=\"cabeceraR\">Servlet SaludoAnotacion at " + request.getContextPath() + "</h1>");
             out.println("<a href=" + request.getContextPath() +" >Inicio</a>");
             out.println("</body>");
             out.println("</html>");

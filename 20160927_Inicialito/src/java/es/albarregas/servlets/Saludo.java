@@ -35,10 +35,11 @@ public class Saludo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" href=\"cosascss/estilos.css\" media=\"screen\" title=\"no title\">\n");
             out.println("<title>Servlet Saludo</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Saludo at " + request.getContextPath() + "</h1>");
+            out.println("<h1 id=\"cabeceraA\">Servlet Saludo at " + request.getContextPath() + "</h1>");
             out.println("<a href=" + request.getContextPath() +" >Inicio</a>");
             out.println("</body>");
             out.println("</html>");
