@@ -39,8 +39,7 @@ public class Saludo extends HttpServlet {
             out.println("<title>Servlet Saludo</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1 id=\"cabeceraA\">Servlet Saludo at " + request.getContextPath() + "</h1>");
-            out.println("<a href=" + request.getContextPath() +" >Inicio</a>");
+            out.println("<h1> Hola mundo </h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -21,27 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author Daw2
  */
 @WebServlet(name = "CicloVida", urlPatterns = {"/ciclo"})
-public class CicloVida extends HttpServlet {
-    public Enumeration<String> servletParams ;
-
-    /**
-     *
-     * @param config
-     */
-    @Override
-    public void init(ServletConfig config){
-        servletParams=config.getInitParameterNames();
-
-            }
-
-    /**
-     *
-     */
-    @Override
-    public void destroy(){
-        System.out.println("destroy()");
-    }
-
+public class Parametros extends HttpServlet {
+  
     /**
      *
      * @param request
@@ -67,13 +48,7 @@ public class CicloVida extends HttpServlet {
                 String valor = request.getParameter(elemento);
                 out.println("<p>" + elemento + " - " + valor + "</p>");
             }
-            java.util.Enumeration<String> parametrostritos = request.getHeaderNames();
             
-            while(parametrostritos.hasMoreElements()){
-                String elemento = parametrostritos.nextElement();
-                String valor = request.getHeader(elemento);
-                out.println("<p>" + elemento + " - " + valor + "</p>");
-            }
             out.println("</body>");
             out.println("</html>");
             
