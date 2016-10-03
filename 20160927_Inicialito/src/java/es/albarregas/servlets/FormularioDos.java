@@ -58,7 +58,20 @@ public class FormularioDos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Formulario</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<p> No as pasado por el formulario</p>");
+
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     /**
@@ -77,22 +90,33 @@ public class FormularioDos extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" href=\"cosascss/estilos.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/jquery-3.1.1.js\"></script>");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/bootstrap.min.js\"></script>\n");
             out.println("<title>Servlet Formulario</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<p> Posito</p>");
+            out.println("<div class=\"panel panel-primary\">");
+            out.println("<div class=\"panel-heading\">Formulario completo</div>");
+            out.println("<div class=\"panel-body\">");
             java.util.Enumeration<String> parametros = request.getParameterNames();
 
             while (parametros.hasMoreElements()) {
                 String elemento = parametros.nextElement();
-                String valor = request.getParameter(elemento);
-                if(elemento=="aficionillas"){
-                    //request.getParameterValues("select2") 
-                }else{
-                out.println("<p>" + elemento + " - " + valor + "</p>");
-                }
-            }
+                String[] parametritos = request.getParameterValues(elemento);
+                out.println("<p> <strong>" + elemento + " : </strong>");
 
+                for (int i = 0; i < parametritos.length; i++) {
+                    out.println(parametritos[i]);
+
+                }
+                out.println("</p>");
+
+            }
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }

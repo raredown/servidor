@@ -15,14 +15,13 @@ and open the template in the editor.
         <script src="../js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-sm-4"> 
 
                     <form method="post" action="../FormularioDos">
                         <fieldset>
-                            <p>Datos personales</p>
+                            <legend>Datos personales</legend>
                             <div class="form-group">
                                 <label for="usuarioPrueba">Nombre</label>
                                 <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre">
@@ -39,8 +38,10 @@ and open the template in the editor.
                                 <option value="20">20</option>
                             </select>
 
+                        </fieldset>
+                        <fieldset>
 
-                            <p>Otros datos</p>
+                            <legend>Otros datos</legend>
                             <div class="radio">
                                 <label for="usuarioPrueba">Estado civil</label>
                                 <label class="radio-inline"><input type="radio" name="optradio" value="Soltero">Soltero</label>
@@ -61,9 +62,28 @@ and open the template in the editor.
                                 <label for="comment">Commentario:</label>
                                 <textarea class="form-control" rows="5" id="comment" name="comentario"></textarea>
                             </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" name="chequeo"> Pulsa y marca</label>
+                        </fieldset>
+                        <fieldset>
+
+
+                            <legend>Medios Tecnol&oacute;gicos</legend>
+                            <div class="radio">
+                                <label for="usuarioPrueba">Tienes internet</label>
+                                <label class="radio-inline"><input type="radio" name="intradio" value="Si">Si</label>
+                                <label class="radio-inline"><input type="radio" name="intradio"  value="No">No</label>
+
+
                             </div>
+                            <div class="form-group">
+                                <label for="sel1">Sistema Operativo:</label>
+                                <select class="form-control" id="sel1" name="sistemaoperativo">
+                                    <option name="aficiones"  value="window">Window</option>
+                                    <option name="aficiones" value="cosasdeapple">Apple</option>
+                                    <option name="aficiones"  value="linux">Debian</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="secreto" value="69">
+
                             <button type="submit" class="btn btn-default">Submit</button>
                         </fieldset>
                     </form>
