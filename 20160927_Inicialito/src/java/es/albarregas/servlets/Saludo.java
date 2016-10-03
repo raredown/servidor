@@ -36,6 +36,10 @@ public class Saludo extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<link rel=\"stylesheet\" href=\"cosascss/estilos.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/jquery-3.1.1.js\"></script>");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/bootstrap.min.js\"></script>\n");
+
             out.println("<title>Servlet Saludo</title>");            
             out.println("</head>");
             out.println("<body>");

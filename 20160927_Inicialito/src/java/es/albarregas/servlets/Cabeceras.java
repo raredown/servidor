@@ -37,10 +37,18 @@ public class Cabeceras extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" href=\"cosascss/estilos.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/jquery-3.1.1.js\"></script>");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/bootstrap.min.js\"></script>\n");
             out.println("<title>Cabeceras</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Cabeceras iniciales</h1>");
+            out.println("<div class=\"panel panel-primary\">");
+            out.println("<div class=\"panel-heading\">Cabeceras</div>");
+            out.println("  <div class=\"panel-body\">");
+
             java.util.Enumeration<String> parametrostritos = request.getHeaderNames();
             
             while(parametrostritos.hasMoreElements()){
@@ -48,6 +56,9 @@ public class Cabeceras extends HttpServlet {
                 String valor = request.getHeader(elemento);
                 out.println("<p>" + elemento + " - " + valor + "</p>");
             }
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }

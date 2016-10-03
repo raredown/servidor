@@ -37,10 +37,17 @@ public class Parametros extends HttpServlet {
         out.println("<!DOCTYPE html>");
         out.println("<html>");
             out.println("<head>");
-            out.println("<title>Par&aacute;metros</title>");            
+            out.println("<title>Par&aacute;metros</title>");  
+            out.println("<link rel=\"stylesheet\" href=\"cosascss/estilos.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/jquery-3.1.1.js\"></script>");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\" media=\"screen\" title=\"no title\">\n");
+            out.println("<script src=\"js/bootstrap.min.js\"></script>\n");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Par&aacute;metros iniciales</h1>");
+            out.println("<div class=\"panel panel-primary\">");
+            out.println("<div class=\"panel-heading\">Cabeceras</div>");
+            out.println(" <div class=\"panel-body\">");
             java.util.Enumeration<String> parametros = request.getParameterNames();
             
             while(parametros.hasMoreElements()){
@@ -48,7 +55,9 @@ public class Parametros extends HttpServlet {
                 String valor = request.getParameter(elemento);
                 out.println("<p>" + elemento + " - " + valor + "</p>");
             }
-            
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
             
