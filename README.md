@@ -1,4 +1,3 @@
-# servidor
-Proyecto en el que llevaremos a cabo las tareas de práctica de clase. Servlets
+# Ejercicios de Servidor
 
-Actualizado hasta el ejercicio de Formulario completo
+Añadido el formulario completo.
